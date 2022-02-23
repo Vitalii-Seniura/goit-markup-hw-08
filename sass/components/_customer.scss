@@ -1,0 +1,40 @@
+.customer-list__item {
+  width: 170px;
+  height: 92px;
+}
+
+.customer-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  transition: border 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accentColor;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.customer-list__icon {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  fill: #afb1b8;
+
+  transition: fill 250ms $timing-function;
+
+  .customer-list__link:hover &,
+  .customer-list__link:focus & {
+    fill: $accentColor;
+    cursor: pointer;
+  }
+}
