@@ -1,7 +1,20 @@
 .subscription {
-  width: 570px;
-  height: 86px;
-  margin-left: 93px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    // height: 156px;
+  }
+
+  @include tab {
+  }
+
+  @include desk {
+    margin-left: 93px;
+    width: 570px;
+    height: 86px;
+  }
 }
 .subscription__label {
   color: $textWhiteColor;
@@ -13,14 +26,24 @@
   margin: 0;
   padding: 0;
 
-  margin-bottom: 20px;
+  @include desk {
+    margin-bottom: 20px;
+  }
 }
 
 .subscription__form {
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   display: flex;
 }
 
 .subscription__input {
+  @media screen and (max-width: 767px) {
+    max-width: 450px;
+  }
   width: 358px;
   height: 50px;
 
@@ -30,6 +53,11 @@
   border-radius: 4px;
   background-color: inherit;
   color: rgba(255, 255, 255, 0.6);
+
+  @media screen and (max-width: 1199px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .subscription__btn {
@@ -38,7 +66,10 @@
   align-items: center;
   width: 200px;
   height: 50px;
-  margin-left: 12px;
+
+  @include desk {
+    margin-left: 12px;
+  }
 
   color: $textWhiteColor;
   background-color: $accentColor;

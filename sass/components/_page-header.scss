@@ -1,8 +1,21 @@
 .header {
-  display: flex;
   align-items: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include tab {
+    display: flex;
+    align-items: center;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  @include desk {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 }
 
 .border {
@@ -15,11 +28,17 @@
 }
 
 .site-nav {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  margin-left: 93px;
-  list-style: none;
+  display: none;
+
+  @include tab {
+    display: flex;
+    margin-left: 88px;
+  }
+
+  @include desk {
+    display: flex;
+    margin-left: 93px;
+  }
 }
 
 .site-nav__item:not(:last-child) {
@@ -84,18 +103,37 @@
 }
 
 .auth-nav {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
-  list-style: none;
+  display: none;
+
+  @include tab {
+    display: block;
+    margin-left: auto;
+  }
+
+  @include desk {
+    display: flex;
+    margin-left: auto;
+  }
 }
 
 .auth-nav__item:not(:last-child) {
-  margin-right: 30px;
+  @include tab {
+    margin-bottom: 10px;
+  }
+
+  @include desk {
+    margin-right: 30px;
+  }
 }
 
 .auth-nav__icon {
-  margin-right: 10px;
-  fill: currentColor;
+  @include tab {
+    margin-right: 8px;
+    fill: currentColor;
+  }
+
+  @include desk {
+    margin-right: 10px;
+    fill: currentColor;
+  }
 }

@@ -1,6 +1,18 @@
 .portfolio-btn {
-  margin-bottom: 50px;
-  justify-content: center;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include tab {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  @include desk {
+    margin-bottom: 50px;
+  }
 }
 
 .portfolio-btn__button {
@@ -38,13 +50,18 @@
 }
 
 .project-grid {
-  display: flex;
-  flex-wrap: wrap;
+  @include tab {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
 
-  list-style: none;
+    list-style: none;
 
-  margin-top: -30px;
-  margin-left: -30px;
+    @include tab {
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+  }
 }
 
 .project-grid__title {
@@ -83,9 +100,20 @@
 }
 
 .project-grid__card {
-  margin-left: 30px;
-  margin-top: 30px;
-  flex-basis: calc(100% / 3 - 30px);
+  @include tab {
+    margin-left: 30px;
+    margin-top: 30px;
+    flex-basis: calc(100% / 2 - 30px);
+  }
+  @include desk {
+    flex-basis: calc(100% / 3 - 30px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .project-grid__card:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 .project-grid__thumb {
