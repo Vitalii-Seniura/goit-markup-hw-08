@@ -14,6 +14,10 @@ p {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -273,6 +277,61 @@ img {
   }
 }
 
+.mob-menu-btn,
+.mob-menu_close-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-left: auto;
+  border: none;
+  background: white;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-btn,
+.mob-menu_close-btn {
+    display: none;
+  }
+}
+
+.mob-menu-btn_icon:hover, .mob-menu-btn_icon:focus,
+.mob-menu-close_icon:hover,
+.mob-menu-close_icon:focus {
+  fill: #2196f3;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-menu {
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding-left: 40px;
+  padding-bottom: 48px;
+  padding-top: 10px;
+  padding-right: 15px;
+}
+.mob-menu .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+}
+
 .hero {
   text-align: center;
   padding-top: 118px;
@@ -408,7 +467,7 @@ img {
     margin-bottom: 30px;
   }
 }
-@media screen and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .advantages-list__item:nth-child(odd) {
     margin-right: 30px;
   }
@@ -986,6 +1045,15 @@ img {
   margin-right: 8px;
 }
 
+@media screen and (max-width: 767px) {
+  .portfolio-btn__item {
+    margin-top: 15px;
+  }
+
+  .portfolio-btn {
+    margin-top: -15px;
+  }
+}
 @media screen and (min-width: 768px) {
   .project-grid {
     display: -webkit-box;
@@ -1027,7 +1095,14 @@ img {
 }
 
 .project-grid__project {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
   text-decoration: none;
   -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1101,6 +1176,9 @@ img {
 }
 
 .project-grid__item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
@@ -1118,6 +1196,11 @@ img {
   overflow-y: scroll;
   -webkit-transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (max-width: 767px) {
+  .backdrop {
+    padding: 93px 15px;
+  }
 }
 
 .backdrop.is-hidden {

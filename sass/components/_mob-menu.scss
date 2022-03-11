@@ -1,0 +1,48 @@
+.mob-menu-btn,
+.mob-menu_close-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-left: auto;
+  border: none;
+  background: $textWhiteColor;
+
+  @include tab {
+    display: none;
+  }
+}
+
+.mob-menu-btn_icon,
+.mob-menu-close_icon {
+  &:hover,
+  &:focus {
+    fill: $accentColor;
+    outline: none;
+    cursor: pointer;
+    transition: fill 250ms $timing-function;
+  }
+}
+
+.mob-menu {
+  position: fixed;
+  background-color: $textWhiteColor;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  padding-left: 40px;
+  padding-bottom: 48px;
+  padding-top: 10px;
+  padding-right: 15px;
+
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
